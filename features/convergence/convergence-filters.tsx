@@ -4,21 +4,8 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Menu } from "lucide-react";
-import { useState, useMemo } from "react";
-import { getConvergenceQuadrant, calculateConvergenceScore } from "@/services/convergence-service";
-
-type ConvergenceNode = {
-  id: string;
-  label: string;
-  primaryDomain: 'healthcare' | 'tech' | 'consumerCulture' | 'environment';
-  secondaryDomains: ('healthcare' | 'tech' | 'consumerCulture' | 'environment')[];
-  x: number;
-  y: number;
-  status: 'underReview' | 'approvedForPrototyping' | 'discarded' | 'inPrototyping' | 'validated';
-  validationDesirability: string | null;
-  validationFeasibility: string | null;
-  validationViability: string | null;
-};
+import { useState, useMemo, useEffect } from "react";
+import { getConvergenceQuadrant, calculateConvergenceScore, type ConvergenceNode } from "@/services/convergence-service";
 
 type ConvergenceFiltersProps = {
   nodes: ConvergenceNode[];

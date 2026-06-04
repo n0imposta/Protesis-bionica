@@ -1,8 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: dark;
+  --background: #06080d;
+  --foreground: #eef6ff;
+  --muted: #8ea0b8;
+  --panel: rgba(12, 18, 28, 0.72);
+  --panel-strong: rgba(17, 27, 42, 0.9);
+  --line: rgba(158, 209, 255, 0.16);
+  --cyan: #67e8f9;
+  --mint: #7dd3a8;
+  --violet: #a78bfa;
+  --rose: #fb7185;
+  --amber: #fbbf24;
 }
 
 @theme inline {
@@ -12,15 +22,59 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: #06080d;
 }
 
 body {
-  background: var(--background);
+  min-height: 100%;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(103, 232, 249, 0.12), transparent 24rem),
+    radial-gradient(circle at 80% 0%, rgba(125, 211, 168, 0.1), transparent 22rem),
+    linear-gradient(135deg, #06080d 0%, #08111c 48%, #0a0d14 100%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(103, 232, 249, 0.24);
+  color: white;
+}
+
+.medical-grid {
+  background-image:
+    linear-gradient(rgba(158, 209, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(158, 209, 255, 0.06) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+.glass-panel {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(18px);
+}
+
+.animated-gradient {
+  background: linear-gradient(120deg, rgba(103, 232, 249, 0.22), rgba(125, 211, 168, 0.2), rgba(167, 139, 250, 0.18));
+  background-size: 200% 200%;
+  animation: gradient-shift 11s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }

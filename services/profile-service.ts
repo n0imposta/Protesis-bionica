@@ -1,9 +1,9 @@
 import { isSupabaseConfigured } from "@/lib/env";
-import { createClient } from "@/lib/supabase/client";
+import { createClient } from "@/lib/supabase/server";
 
 export async function getCurrentProfile() {
   if (!isSupabaseConfigured) return null;
-  const supabase = createClient();
+  const supabase = await createClient();
   const { data: userData } = await supabase.auth.getUser();
   if (!userData.user) return null;
   const { data } = await supabase

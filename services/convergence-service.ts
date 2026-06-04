@@ -227,9 +227,9 @@ export async function validateConvergenceNode(
       (validation.viability !== undefined || currentNode.validationViability !== null);
     
     if (hasAllValidations && 
-        validation.desirability?.length > 0 && 
-        validation.feasibility?.length > 0 && 
-        validation.viability?.length > 0) {
+        validation.desirability && validation.desirability.length > 0 && 
+        validation.feasibility && validation.feasibility.length > 0 && 
+        validation.viability && validation.viability.length > 0) {
       // Check if validations are positive (basic check - in reality would need sentiment analysis)
       updates.status = 'approvedForPrototyping';
     }

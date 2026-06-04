@@ -115,9 +115,9 @@ export function ConvergenceFilters({ nodes, onFilterChange }: ConvergenceFilters
             <label className="flex items-start">
               <Checkbox
                 checked={selectedDomains.includes("healthcare")}
-                onChange={(checked) => {
+                onChange={(checked: boolean) => {
                   const newList = checked 
-                    ? [...selectedDomains, "healthcare"] 
+                    ? [...selectedDomains, "healthcare" as const] 
                     : selectedDomains.filter((d) => d !== "healthcare");
                   setSelectedDomains(newList);
                 }}
@@ -127,9 +127,9 @@ export function ConvergenceFilters({ nodes, onFilterChange }: ConvergenceFilters
             <label className="flex items-start">
               <Checkbox
                 checked={selectedDomains.includes("tech")}
-                onChange={(checked) => {
+                onChange={(checked: boolean) => {
                   const newList = checked 
-                    ? [...selectedDomains, "tech"] 
+                    ? [...selectedDomains, "tech" as const] 
                     : selectedDomains.filter((d) => d !== "tech");
                   setSelectedDomains(newList);
                 }}
@@ -139,9 +139,9 @@ export function ConvergenceFilters({ nodes, onFilterChange }: ConvergenceFilters
             <label className="flex items-start">
               <Checkbox
                 checked={selectedDomains.includes("consumerCulture")}
-                onChange={(checked) => {
+                onChange={(checked: boolean) => {
                   const newList = checked 
-                    ? [...selectedDomains, "consumerCulture"] 
+                    ? [...selectedDomains, "consumerCulture" as const] 
                     : selectedDomains.filter((d) => d !== "consumerCulture");
                   setSelectedDomains(newList);
                 }}
@@ -151,9 +151,9 @@ export function ConvergenceFilters({ nodes, onFilterChange }: ConvergenceFilters
             <label className="flex items-start">
               <Checkbox
                 checked={selectedDomains.includes("environment")}
-                onChange={(checked) => {
+                onChange={(checked: boolean) => {
                   const newList = checked 
-                    ? [...selectedDomains, "environment"] 
+                    ? [...selectedDomains, "environment" as const] 
                     : selectedDomains.filter((d) => d !== "environment");
                   setSelectedDomains(newList);
                 }}
@@ -172,9 +172,9 @@ export function ConvergenceFilters({ nodes, onFilterChange }: ConvergenceFilters
             <label className="flex items-start">
               <Checkbox
                 checked={selectedStatus.includes("underReview")}
-                onChange={(checked) => {
+                onChange={(checked: boolean) => {
                   const newList = checked 
-                    ? [...selectedStatus, "underReview"] 
+                    ? [...selectedStatus, "underReview" as const] 
                     : selectedStatus.filter((s) => s !== "underReview");
                   setSelectedStatus(newList);
                 }}
@@ -184,9 +184,9 @@ export function ConvergenceFilters({ nodes, onFilterChange }: ConvergenceFilters
             <label className="flex items-start">
               <Checkbox
                 checked={selectedStatus.includes("approvedForPrototyping")}
-                onChange={(checked) => {
+                onChange={(checked: boolean) => {
                   const newList = checked 
-                    ? [...selectedStatus, "approvedForPrototyping"] 
+                    ? [...selectedStatus, "approvedForPrototyping" as const] 
                     : selectedStatus.filter((s) => s !== "approvedForPrototyping");
                   setSelectedStatus(newList);
                 }}
@@ -196,9 +196,9 @@ export function ConvergenceFilters({ nodes, onFilterChange }: ConvergenceFilters
             <label className="flex items-start">
               <Checkbox
                 checked={selectedStatus.includes("discarded")}
-                onChange={(checked) => {
+                onChange={(checked: boolean) => {
                   const newList = checked 
-                    ? [...selectedStatus, "discarded"] 
+                    ? [...selectedStatus, "discarded" as const] 
                     : selectedStatus.filter((s) => s !== "discarded");
                   setSelectedStatus(newList);
                 }}
@@ -208,9 +208,9 @@ export function ConvergenceFilters({ nodes, onFilterChange }: ConvergenceFilters
             <label className="flex items-start">
               <Checkbox
                 checked={selectedStatus.includes("inPrototyping")}
-                onChange={(checked) => {
+                onChange={(checked: boolean) => {
                   const newList = checked 
-                    ? [...selectedStatus, "inPrototyping"] 
+                    ? [...selectedStatus, "inPrototyping" as const] 
                     : selectedStatus.filter((s) => s !== "inPrototyping");
                   setSelectedStatus(newList);
                 }}
@@ -220,9 +220,9 @@ export function ConvergenceFilters({ nodes, onFilterChange }: ConvergenceFilters
             <label className="flex items-start">
               <Checkbox
                 checked={selectedStatus.includes("validated")}
-                onChange={(checked) => {
+                onChange={(checked: boolean) => {
                   const newList = checked 
-                    ? [...selectedStatus, "validated"] 
+                    ? [...selectedStatus, "validated" as const] 
                     : selectedStatus.filter((s) => s !== "validated");
                   setSelectedStatus(newList);
                 }}
@@ -241,7 +241,7 @@ export function ConvergenceFilters({ nodes, onFilterChange }: ConvergenceFilters
             <label className="flex items-start">
               <Checkbox
                 checked={validationFilters.desirability}
-                onChange={(checked) => {
+                onChange={(checked: boolean) => {
                   setValidationFilters(prev => ({ ...prev, desirability: checked }));
                 }}
               />
@@ -250,7 +250,7 @@ export function ConvergenceFilters({ nodes, onFilterChange }: ConvergenceFilters
             <label className="flex items-start">
               <Checkbox
                 checked={validationFilters.feasibility}
-                onChange={(checked) => {
+                onChange={(checked: boolean) => {
                   setValidationFilters(prev => ({ ...prev, feasibility: checked }));
                 }}
               />
@@ -259,7 +259,7 @@ export function ConvergenceFilters({ nodes, onFilterChange }: ConvergenceFilters
             <label className="flex items-start">
               <Checkbox
                 checked={validationFilters.viability}
-                onChange={(checked) => {
+                onChange={(checked: boolean) => {
                   setValidationFilters(prev => ({ ...prev, viability: checked }));
                 }}
               />

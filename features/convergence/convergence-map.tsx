@@ -12,23 +12,12 @@ import {
 } from "lucide-react";
 import { 
   getConvergenceQuadrant, 
-  calculateConvergenceScore 
+  calculateConvergenceScore,
+  type ConvergenceNode
 } from "@/services/convergence-service";
 
 // Updated node type to match our enhanced service
-type EnhancedConvergenceNode = {
-  id: string;
-  label: string;
-  primaryDomain: 'healthcare' | 'tech' | 'consumerCulture' | 'environment';
-  secondaryDomains: ('healthcare' | 'tech' | 'consumerCulture' | 'environment')[];
-  description: string | null;
-  x: number; // Impact (0-100)
-  y: number; // Feasibility (0-100)
-  status: 'underReview' | 'approvedForPrototyping' | 'discarded' | 'inPrototyping' | 'validated';
-  validationDesirability: string | null;
-  validationFeasibility: string | null;
-  validationViability: string | null;
-};
+type EnhancedConvergenceNode = ConvergenceNode;
 
 // Domain to icon and color mapping
 const DOMAIN_CONFIG = {

@@ -174,17 +174,17 @@ export function ConvergenceMap({
             
             {/* Validation Status Indicators */}
             <div className="flex flex-wrap gap-1 mb-2">
-              {node.validationDesirability?.length > 0 && (
+              {node.validationDesirability && node.validationDesirability.length > 0 && (
                 <span className="px-1.5 py-0.5 rounded-xs text-xs bg-green-100 text-green-800">
                   D
                 </span>
               )}
-              {node.validationFeasibility?.length > 0 && (
+              {node.validationFeasibility && node.validationFeasibility.length > 0 && (
                 <span className="px-1.5 py-0.5 rounded-xs text-xs bg-blue-100 text-blue-800">
                   F
                 </span>
               )}
-              {node.validationViability?.length > 0 && (
+              {node.validationViability && node.validationViability.length > 0 && (
                 <span className="px-1.5 py-0.5 rounded-xs text-xs bg-purple-100 text-purple-800">
                   V
                 </span>

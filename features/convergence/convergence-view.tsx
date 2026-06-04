@@ -37,7 +37,7 @@ export default async function ConvergenceView() {
                 antes de avanzar al prototipado.
               </CardDescription>
             </div>
-            <Badge variant="secondary" size="sm">
+            <Badge tone="slate">
               Etapas 1-3 Active
             </Badge>
           </div>
